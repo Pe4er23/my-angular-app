@@ -1,12 +1,26 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('my-angular-app');
+export class AppComponent {
+  // Task 1
+  salary = 2500;
+  learningProgress = 0.85;
+
+  // Task 2
+  showContacts = true;
+  skills = ['HTML', 'CSS', 'JavaScript', 'Angular'];
+  userRole = 'admin';
+
+  // Task 3
+  selectedVehicle = '';
+
+  showInfo(vehicleType: string) {
+    this.selectedVehicle = vehicleType;
+  }
 }
